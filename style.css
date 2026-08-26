@@ -1,0 +1,3014 @@
+/* =========================================================
+   MAMEE CREATIVITY & INNOVATION WEBSITE
+   COMPLETE STYLE.CSS
+   ========================================================= */
+
+
+/* =========================================================
+   01. FONTS + GLOBAL
+   ========================================================= */
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700;900&family=Fredoka:wght@500;600;700&display=swap');
+
+:root {
+  --red: #ed1c24;
+  --yellow: #ffd51f;
+  --blue: #0878c9;
+  --cyan: #dff7ff;
+  --cream: #fff8dc;
+
+  --ink: #111111;
+  --dark: #101828;
+  --muted: #555555;
+  --white: #ffffff;
+
+  --radius: 28px;
+}
+
+
+/* =========================================================
+   RESET
+   ========================================================= */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'DM Sans', sans-serif;
+  background: #fffdf7;
+  color: var(--ink);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+.container {
+  width: min(1160px, calc(100% - 40px));
+  margin: auto;
+}
+
+
+/* =========================================================
+   GLOBAL HEADINGS
+   ========================================================= */
+
+h1,
+h2,
+h3,
+.logo {
+  font-family: 'Fredoka', sans-serif;
+  font-weight: 700;
+  line-height: 0.98;
+}
+
+
+/* =========================================================
+   02. NAVIGATION BAR
+   ========================================================= */
+
+.navbar {
+  height: 82px;
+
+  background: #ffffff;
+
+  position: sticky;
+  top: 0;
+
+  z-index: 100;
+
+  border-bottom: 2px solid #111111;
+}
+
+.nav-inner {
+  width: min(1240px, calc(100% - 34px));
+
+  height: 100%;
+
+  margin: auto;
+
+  display: flex;
+  align-items: center;
+
+  gap: 28px;
+}
+
+
+/* =========================================================
+   MAMEE LOGO
+   ========================================================= */
+
+.logo {
+  font-size: 36px;
+
+  letter-spacing: -1px;
+
+  color: var(--red);
+
+  margin-right: auto;
+}
+
+.logo span {
+  color: var(--yellow);
+}
+
+
+/* =========================================================
+   NAVIGATION LINKS
+   ========================================================= */
+
+.nav-links {
+  display: flex;
+
+  gap: 6px;
+
+  align-items: center;
+}
+
+.nav-links a {
+  font-family: 'DM Sans', sans-serif;
+
+  font-weight: 900;
+
+  font-size: 13px;
+
+  padding: 10px 14px;
+
+  border-radius: 999px;
+
+  transition: 0.25s ease;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+  background: var(--yellow);
+
+  color: #111111;
+
+  transform: translateY(-2px);
+}
+
+
+/* =========================================================
+   03. BUTTON
+   ========================================================= */
+
+.btn {
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: center;
+
+  background: var(--red);
+
+  color: #ffffff;
+
+  border: 3px solid #111111;
+
+  padding: 13px 21px;
+
+  border-radius: 999px;
+
+  font-weight: 900;
+
+  box-shadow: 5px 5px 0 #111111;
+
+  transition: 0.2s ease;
+}
+
+.btn:hover {
+  transform: translate(3px, 3px);
+
+  box-shadow: 2px 2px 0 #111111;
+}
+
+
+/* =========================================================
+   04. HOME PAGE
+   ========================================================= */
+
+.hero {
+  position: relative;
+
+  width: 100%;
+
+  height: calc(100vh - 82px);
+
+  min-height: 500px;
+
+  background-image: url("../mamee.jpg");
+
+  background-size: cover;
+
+  background-position: center center;
+
+  background-repeat: no-repeat;
+
+  overflow: hidden;
+}
+
+
+/* Hide Home text */
+
+.hero .container {
+  display: none;
+}
+
+
+/* Hide old visual */
+
+.hero .visual {
+  display: none;
+}
+
+
+/* Remove extra effects */
+
+.hero:before,
+.hero:after {
+  display: none;
+}
+
+
+/* =========================================================
+   05. GENERAL SECTION
+   ========================================================= */
+
+.section {
+  padding: 100px 0;
+
+  position: relative;
+}
+
+.section.white {
+  background: #ffffff;
+}
+
+.section.dark {
+  background: var(--dark);
+
+  color: #ffffff;
+}
+
+
+/* =========================================================
+   06. EYEBROW
+   ========================================================= */
+
+.section .eyebrow {
+  display: inline-block;
+
+  font-family: 'Fredoka', sans-serif;
+
+  font-size: 15px;
+
+  font-weight: 700;
+
+  letter-spacing: 2px;
+
+  color: var(--red);
+
+  background: transparent;
+
+  padding: 0;
+
+  text-transform: uppercase;
+
+  margin-bottom: 5px;
+}
+
+.section.dark .eyebrow {
+  color: var(--yellow) !important;
+}
+
+
+/* =========================================================
+   07. MAIN SECTION TITLES
+   CLEAN BLACK OUTLINE
+   ========================================================= */
+
+.section-title {
+  font-family: 'Fredoka', sans-serif;
+
+  font-size: clamp(44px, 6vw, 78px);
+
+  font-weight: 700;
+
+  color: var(--yellow);
+
+  /* CLEAN BLACK OUTLINE */
+  -webkit-text-stroke: 3px #111111;
+
+  /* Keeps outline outside the letters */
+  paint-order: stroke fill;
+
+  /* IMPORTANT: NO SHADOW */
+  text-shadow: none;
+
+  letter-spacing: -1.5px;
+
+  line-height: 1;
+
+  margin-top: 15px;
+
+  position: relative;
+
+  z-index: 2;
+}
+
+
+/* Dark section */
+
+.section.dark .section-title {
+  color: var(--yellow);
+
+  -webkit-text-stroke: 3px #111111;
+
+  paint-order: stroke fill;
+
+  text-shadow: none;
+}
+
+
+/* =========================================================
+   08. SECTION DESCRIPTION
+   ========================================================= */
+
+.section-sub {
+  max-width: 780px;
+
+  font-family: 'DM Sans', sans-serif;
+
+  font-size: 17px;
+
+  font-weight: 400;
+
+  color: var(--muted);
+
+  line-height: 1.7;
+
+  margin-top: 18px;
+}
+
+.section.dark .section-sub {
+  color: #cbd5e1;
+}
+
+
+/* =========================================================
+   09. INNER PAGE HERO
+   ========================================================= */
+
+.page-hero {
+  padding: 95px 0 80px;
+
+  background: var(--blue);
+
+  color: #ffffff;
+
+  position: relative;
+
+  overflow: hidden;
+
+  border-bottom: 4px solid #111111;
+}
+
+
+/* Decorative WOW */
+
+.page-hero:before {
+  content: 'WOW!';
+
+  position: absolute;
+
+  right: -20px;
+
+  bottom: -65px;
+
+  font: 700 180px 'Fredoka', sans-serif;
+
+  color: rgba(255, 255, 255, 0.13);
+
+  transform: rotate(-8deg);
+}
+
+.page-hero .container {
+  position: relative;
+
+  z-index: 2;
+}
+
+
+/* =========================================================
+   PAGE HERO MAIN TITLE
+   ========================================================= */
+
+.page-hero h1 {
+  font-family: 'Fredoka', sans-serif;
+
+  font-size: clamp(58px, 8vw, 100px);
+
+  font-weight: 700;
+
+  color: #f74504;
+
+  /* BLACK OUTLINE */
+  -webkit-text-stroke: 5px #111111;
+
+  paint-order: stroke fill;
+
+  /* NO SHADOW */
+  text-shadow: none;
+
+  letter-spacing: -2px;
+
+  line-height: 0.95;
+
+  margin-top: 20px;
+
+  position: relative;
+
+  z-index: 2;
+}
+
+
+/* Yellow words inside title */
+
+.page-hero h1 span {
+  color: var(--yellow);
+
+  -webkit-text-stroke: 5px #111111;
+
+  paint-order: stroke fill;
+
+  text-shadow: none;
+}
+
+
+/* Page description */
+
+.page-hero .lead {
+  color: #f2ff00;
+
+  margin-top: 25px;
+}
+
+
+/* =========================================================
+   10. PROBLEMS PAGE
+   ========================================================= */
+
+.problem-list {
+  display: grid;
+
+  gap: 24px;
+
+  margin-top: 50px;
+}
+
+.problem {
+  display: grid;
+
+  grid-template-columns: 115px 1fr;
+
+  gap: 30px;
+
+  background: #f4f801;
+
+  border: 3px solid #111111;
+
+  border-radius: 28px;
+
+  padding: 34px;
+
+  position: relative;
+
+  overflow: hidden;
+
+  box-shadow: 7px 7px 0 #111111;
+}
+
+.problem:nth-child(2) {
+  background: #ffe5e5;
+}
+
+.problem:nth-child(3) {
+  background: var(--cream);
+}
+
+.problem:nth-child(4) {
+  background: var(--cyan);
+}
+
+.problem-no {
+  font: 700 70px 'Fredoka', sans-serif;
+
+  color: var(--red);
+
+  line-height: 1;
+}
+
+.problem h2 {
+  font-size: 34px;
+
+  margin: 5px 0 13px;
+
+  color: #111111;
+}
+
+.problem p {
+  color: var(--muted);
+
+  font-size: 16px;
+}
+
+.evidence {
+  margin-top: 18px;
+
+  background: #ffffff;
+
+  border: 2px dashed #111111;
+
+  padding: 15px 17px;
+
+  border-radius: 15px;
+}
+
+.evidence strong {
+  display: block;
+
+  font-size: 10px;
+
+  color: var(--red);
+
+  letter-spacing: 1.2px;
+}
+
+
+/* =========================================================
+   11. PROCESS PAGE
+   ========================================================= */
+
+.timeline {
+  display: grid;
+
+  grid-template-columns: repeat(6, 1fr);
+
+  gap: 12px;
+
+  margin-top: 50px;
+}
+
+.step {
+  background: #ffffff;
+
+  border: 3px solid #111111;
+
+  border-radius: 22px;
+
+  padding: 55px 19px 25px;
+
+  min-height: 230px;
+
+  position: relative;
+
+  box-shadow: 5px 5px 0 #111111;
+
+  transition: 0.25s ease;
+}
+
+.step:hover {
+  transform: translateY(-5px);
+}
+
+.step:nth-child(even) {
+  background: var(--cream);
+}
+
+.step .n {
+  position: absolute;
+
+  top: 13px;
+
+  left: 15px;
+
+  width: 36px;
+
+  height: 36px;
+
+  border-radius: 50%;
+
+  background: var(--red);
+
+  color: #ffffff;
+
+  display: grid;
+
+  place-items: center;
+
+  font-weight: 900;
+
+  border: 2px solid #111111;
+}
+
+.step h3 {
+  font-size: 20px;
+
+  margin: 10px 0;
+
+  color: #111111;
+}
+
+.step p {
+  font-size: 13px;
+
+  color: var(--muted);
+}
+
+
+/* PROCESS FLOW */
+
+.flow {
+  display: grid;
+
+  grid-template-columns: repeat(3, 1fr);
+
+
+  gap: 18px;
+
+  margin-top: 45px;
+}
+
+
+/* CALLOUT */
+
+.callout {
+  margin-top: 55px;
+
+  background: var(--yellow);
+
+  color: #111111;
+
+  border: 4px solid #111111;
+
+  border-radius: 30px;
+
+  padding: 45px;
+
+  box-shadow: 9px 9px 0 #111111;
+}
+
+.callout h2 {
+  font-size: 46px;
+
+  color: #111111;
+}
+/* =========================================
+   SOLUTION GRID
+========================================= */
+
+.solution-grid {
+  display: grid;
+
+  grid-template-columns: repeat(2, 1fr);
+
+  gap: 22px;
+
+  margin-top: 48px;
+}
+
+
+/* =========================================
+   SOLUTION CARD
+========================================= */
+
+.solution {
+  background: #ffffff;
+
+  border: 3px solid #111111;
+
+  border-radius: 28px;
+
+  padding: 38px;
+
+  box-shadow: 7px 7px 0 #111111;
+
+  position: relative;
+
+  overflow: hidden;
+
+  transition:
+    transform 0.3s cubic-bezier(.2,.8,.2,1),
+    box-shadow 0.3s ease;
+}
+
+
+/* Card hover */
+
+.solution:hover {
+  transform: translateY(-6px);
+
+  box-shadow:
+    10px 10px 0 #111111;
+}
+
+
+/* Different card colours */
+
+.solution:nth-child(2) {
+  background: var(--cyan);
+}
+
+.solution:nth-child(3) {
+  background: var(--cream);
+}
+
+.solution:nth-child(4) {
+  background: #ffe5e5;
+}
+
+
+/* =========================================
+   BIG NUMBER
+========================================= */
+
+.solution .big {
+  font: 700 62px 'Fredoka', sans-serif;
+
+  color: var(--red);
+
+  line-height: 1;
+}
+
+
+/* =========================================
+   TITLE
+========================================= */
+
+.solution h2 {
+  font-size: 31px;
+
+  margin: 8px 0 14px;
+
+  color: #111111;
+}
+
+
+/* =========================================
+   DESCRIPTION
+========================================= */
+
+.solution p {
+  color: var(--muted);
+}
+
+
+/* =========================================
+   RESULT BOX
+========================================= */
+
+.result {
+  margin-top: 20px;
+
+  background: #ffffff;
+
+  border: 2px dashed #111111;
+
+  padding: 15px;
+
+  border-radius: 14px;
+}
+
+
+/* Result title */
+
+.result strong {
+  color: var(--red);
+}
+
+
+/* =========================================
+   SOLUTION REFERENCE / LINK BOX
+========================================= */
+
+.solution .solution-link {
+
+  position: relative;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  width: 100%;
+
+  box-sizing: border-box;
+
+  margin-top: 20px;
+
+  padding: 16px 18px;
+
+  background: rgba(255, 255, 255, 0.78);
+
+  border: 2px solid #111111;
+
+  border-radius: 14px;
+
+  color: #111111;
+
+  text-decoration: none;
+
+  font-size: 14px;
+
+  font-weight: 600;
+
+  overflow: hidden;
+
+  transition:
+    background 0.35s ease,
+    transform 0.3s cubic-bezier(.2,.8,.2,1),
+    box-shadow 0.3s ease;
+}
+
+
+/* =========================================
+   TRANSPARENT YELLOW LAYER
+========================================= */
+
+.solution .solution-link::before {
+
+  content: "";
+
+  position: absolute;
+
+  inset: 0;
+
+  background:
+    rgba(255, 247, 0, 0.48);
+
+  opacity: 0;
+
+  transform: scale(0.75);
+
+  transition:
+    opacity 0.4s ease,
+    transform 0.4s cubic-bezier(.2,.8,.2,1);
+
+  pointer-events: none;
+}
+
+
+/* =========================================
+   LINK TEXT
+========================================= */
+
+.solution .solution-link span {
+
+  position: relative;
+
+  z-index: 2;
+
+  transition:
+    transform 0.3s ease,
+    color 0.3s ease;
+}
+
+
+/* =========================================
+   ARROW
+========================================= */
+
+.solution .solution-link::after {
+
+  content: "↗";
+
+  position: relative;
+
+  z-index: 2;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  flex-shrink: 0;
+
+  width: 36px;
+
+  height: 36px;
+
+  margin-left: 15px;
+
+  border: 1.5px solid #111111;
+
+  border-radius: 50%;
+
+  background: transparent;
+
+  color: #111111;
+
+  font-size: 18px;
+
+  transition:
+    transform 0.4s cubic-bezier(.2,.8,.2,1),
+    background 0.3s ease,
+    color 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+
+/* =========================================
+   HOVER EFFECT
+========================================= */
+
+.solution .solution-link:hover {
+
+  transform: translateY(-4px);
+
+  background:
+    rgba(255, 255, 255, 0.45);
+
+  box-shadow:
+    5px 5px 0 #111111;
+}
+
+
+/* Yellow fills the COMPLETE box */
+
+.solution .solution-link:hover::before {
+
+  opacity: 1;
+
+  transform: scale(1);
+}
+
+
+/* Text moves slightly */
+
+.solution .solution-link:hover span {
+
+  transform: translateX(5px);
+
+  color: #111111;
+}
+
+
+/* Arrow moves */
+
+.solution .solution-link:hover::after {
+
+  transform:
+    translate(5px, -5px)
+    rotate(8deg)
+    scale(1.08);
+
+  background: #111111;
+
+  color: #ffffff;
+
+  box-shadow:
+    3px 3px 0 var(--red);
+}
+
+
+/* =========================================
+   CLICK / PRESS EFFECT
+========================================= */
+
+.solution .solution-link:active {
+
+  transform:
+    translateY(1px)
+    scale(0.97);
+
+  box-shadow:
+    2px 2px 0 #111111;
+}
+
+
+.solution .solution-link:active::after {
+
+  transform:
+    scale(0.88);
+}
+
+
+/* =========================================
+   FOCUS ACCESSIBILITY
+========================================= */
+
+.solution .solution-link:focus-visible {
+
+  outline: 3px solid var(--red);
+
+  outline-offset: 4px;
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 768px) {
+
+  .solution-grid {
+
+    grid-template-columns: 1fr;
+
+    gap: 20px;
+  }
+
+  .solution {
+
+    padding: 28px;
+
+    border-radius: 22px;
+  }
+
+  .solution .big {
+
+    font-size: 52px;
+  }
+
+  .solution h2 {
+
+    font-size: 27px;
+  }
+
+  .solution .solution-link {
+
+    padding: 14px 15px;
+
+    font-size: 13px;
+  }
+
+  .solution .solution-link::after {
+
+    width: 32px;
+
+    height: 32px;
+
+    font-size: 16px;
+  }
+
+}
+
+
+/* =========================================
+   SMALL MOBILE
+========================================= */
+
+@media (max-width: 480px) {
+
+  .solution {
+
+    padding: 22px;
+  }
+
+  .solution .solution-link span {
+
+    max-width: 80%;
+
+    line-height: 1.4;
+  }
+
+}
+
+
+/* =========================================================
+   13. BENEFITS PAGE
+   ========================================================= */
+
+.grid-4 {
+  display: grid;
+
+  grid-template-columns: repeat(4, 1fr);
+
+  gap: 18px;
+
+  margin-top: 48px;
+}
+
+.card {
+  background: #ffffff;
+
+  border: 3px solid #111111;
+
+  border-radius: 28px;
+
+  padding: 28px;
+
+  min-height: 250px;
+
+  position: relative;
+
+  overflow: hidden;
+
+  box-shadow: 7px 7px 0 #111111;
+
+  transition: 0.25s ease;
+}
+
+.card:nth-child(2) {
+  background: var(--cyan);
+}
+
+.card:nth-child(3) {
+  background: var(--cream);
+}
+
+.card:nth-child(4) {
+  background: #ffe5e5;
+}
+
+.card:hover {
+  transform: translateY(-8px) rotate(-1deg);
+}
+
+.card .icon {
+  font-size: 45px;
+
+  margin-bottom: 8px;
+}
+
+.card .num {
+  font-family: 'Fredoka', sans-serif;
+
+  font-weight: 700;
+
+  color: var(--red);
+
+  font-size: 18px;
+}
+
+.card h3 {
+  font-size: 25px;
+
+  margin: 7px 0 10px;
+
+  color: #111111;
+}
+
+.card p {
+  font-size: 14px;
+
+  color: #505866;
+}
+
+
+/* =========================================================
+   14. STATISTICS
+   ========================================================= */
+
+.stats {
+  display: grid;
+
+  grid-template-columns: repeat(4, 1fr);
+
+  gap: 15px;
+
+  margin-top: 42px;
+}
+
+.stat {
+  border: 3px solid #111111;
+
+  border-radius: 22px;
+
+  padding: 24px;
+
+  background: var(--blue);
+
+  color: #ffffff;
+
+  box-shadow: 5px 5px 0 #111111;
+
+  transition: 0.2s ease;
+}
+
+.stat:hover {
+  transform: translateY(-5px);
+}
+
+.stat:nth-child(2) {
+  background: var(--red);
+}
+
+.stat:nth-child(3) {
+  background: #111111;
+}
+
+.stat:nth-child(4) {
+  background: var(--yellow);
+
+  color: #111111;
+}
+
+.stat strong {
+  font: 700 42px 'Fredoka', sans-serif;
+
+  display: block;
+}
+
+.stat span {
+  font-size: 12px;
+
+  font-weight: 700;
+}
+
+
+/* =========================================================
+   15. DARK SECTION
+   ========================================================= */
+
+.section.dark h2 {
+  color: var(--yellow);
+}
+
+.section.dark p {
+  color: #cbd5e1;
+}
+
+
+/* =========================================================
+   16. VIDEO BOX
+   ========================================================= */
+
+.video-box {
+  margin-top: 45px;
+
+  min-height: 340px;
+
+  border: 4px solid #111111;
+
+  border-radius: 30px;
+
+  background: var(--blue);
+
+  display: grid;
+
+  place-items: center;
+
+  color: #ffffff;
+
+  text-align: center;
+
+  padding: 40px;
+
+  box-shadow: 9px 9px 0 #111111;
+}
+
+.play {
+  width: 85px;
+
+  height: 85px;
+
+  border-radius: 50%;
+
+  background: var(--yellow);
+
+  color: #111111;
+
+  border: 4px solid #111111;
+
+  display: grid;
+
+  place-items: center;
+
+  margin: 0 auto 18px;
+
+  font-size: 35px;
+
+  transition: 0.2s ease;
+}
+
+.play:hover {
+  transform: scale(1.08);
+}
+
+
+/* =========================================================
+   17. ABOUT ME
+   ========================================================= */
+
+.about-grid {
+  display: grid;
+
+  grid-template-columns: 0.75fr 1.25fr;
+
+  gap: 65px;
+
+  align-items: center;
+}
+
+.profile {
+  min-height: 480px;
+
+  border: 4px solid #111111;
+
+  border-radius: 30px;
+
+  background: var(--red);
+
+  color: #ffffff;
+
+  display: grid;
+
+  place-items: center;
+
+  text-align: center;
+
+  padding: 30px;
+
+  box-shadow: 12px 12px 0 #111111;
+
+  position: relative;
+
+  overflow: hidden;
+}
+
+.profile:before {
+  content: 'HELLO!';
+
+  position: absolute;
+
+  top: 25px;
+
+  left: 20px;
+
+  background: var(--yellow);
+
+  color: #111111;
+
+  padding: 8px 15px;
+
+  border-radius: 999px;
+
+  border: 3px solid #111111;
+
+  font-weight: 900;
+
+  transform: rotate(-8deg);
+}
+
+.profile .initial {
+  font: 700 150px 'Fredoka', sans-serif;
+
+  line-height: 1;
+}
+
+.info-grid {
+  display: grid;
+
+  grid-template-columns: repeat(2, 1fr);
+
+  gap: 14px;
+
+  margin-top: 30px;
+}
+
+.info {
+  padding: 20px;
+
+  background: #ffffff;
+
+  border: 3px solid #111111;
+
+  border-radius: 16px;
+
+  box-shadow: 4px 4px 0 #111111;
+}
+
+.info small {
+  font-size: 10px;
+
+  color: var(--red);
+
+  font-weight: 900;
+
+  letter-spacing: 1px;
+}
+
+.info strong {
+  display: block;
+
+  margin-top: 5px;
+}
+
+
+/* =========================================================
+   18. REFERENCES
+   ========================================================= */
+
+.references {
+  display: grid;
+
+  gap: 14px;
+
+  margin-top: 40px;
+}
+
+.reference {
+  padding: 20px;
+
+  background: #ffffff;
+
+  border: 3px solid #111111;
+
+  border-radius: 18px;
+
+  box-shadow: 4px 4px 0 #111111;
+}
+
+.reference strong {
+  display: block;
+}
+
+.reference span {
+  font-size: 13px;
+
+  color: var(--muted);
+}
+
+
+/* =========================================================
+   19. NOTE BOX
+   ========================================================= */
+
+.note {
+  margin-top: 30px;
+
+  background: var(--cream);
+
+  border: 3px solid #111111;
+
+  border-radius: 18px;
+
+  padding: 22px;
+
+  box-shadow: 5px 5px 0 #111111;
+}
+
+
+/* =========================================================
+   20. FOOTER
+   ========================================================= */
+
+.footer {
+  background: #111111;
+
+  color: #d5d9e0;
+
+  padding: 35px 0;
+}
+
+.footer-inner {
+  display: flex;
+
+  justify-content: space-between;
+
+  gap: 20px;
+
+  flex-wrap: wrap;
+
+  font-size: 12px;
+}
+
+
+/* =========================================================
+   21. ANIMATION
+   ========================================================= */
+
+.reveal {
+  animation: pop 0.7s ease both;
+}
+
+@keyframes pop {
+
+  from {
+    opacity: 0;
+
+    transform: translateY(20px) scale(0.98);
+  }
+
+  to {
+    opacity: 1;
+
+    transform: none;
+  }
+
+}
+
+
+/* =========================================================
+   22. TABLET
+   ========================================================= */
+
+@media (max-width: 1050px) {
+
+  .hero .container {
+    grid-template-columns: 1fr;
+  }
+
+  .visual {
+    height: 450px;
+  }
+
+  .grid-4 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .timeline {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .about-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .stats {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+}
+
+
+/* =========================================================
+   23. MOBILE
+   ========================================================= */
+
+@media (max-width: 760px) {
+
+  .navbar {
+    height: 70px;
+  }
+
+  .nav-inner {
+    overflow-x: auto;
+  }
+
+  .logo {
+    font-size: 30px;
+  }
+
+  .nav-links {
+    overflow-x: auto;
+
+    flex: 1;
+  }
+
+  .nav-links a {
+    white-space: nowrap;
+
+    font-size: 11px;
+
+    padding: 8px 10px;
+  }
+
+
+  /* HOME */
+
+  .hero {
+    height: calc(100vh - 70px);
+
+    min-height: 400px;
+
+    background-size: cover;
+
+    background-position: center center;
+  }
+
+
+  /* SECTION */
+
+  .section,
+  .page-hero {
+    padding: 72px 0;
+  }
+
+
+  /* =======================================================
+     MOBILE MAIN TITLES
+     ======================================================= */
+
+  .section-title {
+    font-size: clamp(42px, 12vw, 60px);
+
+    -webkit-text-stroke: 2.5px #111111;
+
+    paint-order: stroke fill;
+
+    text-shadow: none;
+
+    letter-spacing: -1px;
+
+    line-height: 1;
+  }
+
+
+  /* MOBILE PAGE HERO TITLE */
+
+  .page-hero h1 {
+    font-size: clamp(48px, 13vw, 70px);
+
+    -webkit-text-stroke: 2.5px #111111;
+
+    paint-order: stroke fill;
+
+    text-shadow: none;
+
+    letter-spacing: -1.5px;
+
+    line-height: 0.95;
+  }
+
+  .page-hero h1 span {
+    -webkit-text-stroke: 2.5px #111111;
+
+    paint-order: stroke fill;
+
+    text-shadow: none;
+  }
+
+
+  /* GRIDS */
+
+  .grid-4,
+  .solution-grid,
+  .flow,
+  .timeline,
+  .stats,
+  .info-grid {
+    grid-template-columns: 1fr;
+  }
+
+
+  /* PROBLEMS */
+
+  .problem {
+    grid-template-columns: 1fr;
+
+    gap: 10px;
+  }
+
+  .problem-no {
+    font-size: 52px;
+  }
+
+
+  /* CALLOUT */
+
+  .callout {
+    padding: 30px;
+  }
+
+  .callout h2 {
+    font-size: 35px;
+  }
+
+}
+
+
+/* =========================================================
+   24. SMALL MOBILE
+   ========================================================= */
+
+@media (max-width: 480px) {
+
+  .container {
+    width: calc(100% - 28px);
+  }
+
+  .logo {
+    font-size: 26px;
+  }
+
+  .nav-inner {
+    gap: 10px;
+  }
+
+  .nav-links {
+    gap: 3px;
+  }
+
+  .nav-links a {
+    padding: 7px 8px;
+
+    font-size: 10px;
+  }
+
+
+  /* HOME */
+
+  .hero {
+    height: calc(100vh - 70px);
+
+    min-height: 350px;
+
+    background-size: cover;
+
+    background-position: center center;
+  }
+
+
+  /* PAGE HERO TITLE */
+
+  .page-hero h1 {
+    font-size: 50px;
+
+    -webkit-text-stroke: 2px #111111;
+
+    paint-order: stroke fill;
+
+    text-shadow: none;
+  }
+
+  .page-hero h1 span {
+    -webkit-text-stroke: 2px #111111;
+
+    paint-order: stroke fill;
+
+    text-shadow: none;
+  }
+
+
+  /* SECTION TITLE */
+
+  .section-title {
+    font-size: 45px;
+
+    -webkit-text-stroke: 2px #111111;
+
+    paint-order: stroke fill;
+
+    text-shadow: none;
+
+    letter-spacing: -0.5px;
+  }
+
+
+  /* PROBLEMS */
+
+  .problem {
+    padding: 24px;
+  }
+
+  .problem h2 {
+    font-size: 28px;
+  }
+
+
+  /* SOLUTIONS */
+
+  .solution {
+    padding: 28px;
+  }
+
+  .solution .big {
+    font-size: 50px;
+  }
+
+  .solution h2 {
+    font-size: 27px;
+  }
+
+
+  /* PROFILE */
+
+  .profile {
+    min-height: 350px;
+  }
+
+  .profile .initial {
+    font-size: 110px;
+  }
+
+}
+
+/* =========================================================
+   CARD PRODUCT IMAGES - SAME VISUAL SIZE
+   ========================================================= */
+
+.card .icon {
+    width: 200px;
+    height: 200px;
+    margin: 0 auto 22px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    overflow: hidden;
+    border-radius: 18px;
+    background: #ffffff;
+    border: 2px solid #111111;
+}
+
+.card .icon img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+    object-position: center;
+
+    display: block;
+}
+
+/* =========================================================
+   FOUNDER SECTION
+   ========================================================= */
+
+.founder-section {
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    gap: 70px;
+    align-items: center;
+}
+
+.founder-text {
+    max-width: 760px;
+}
+
+.founder-text p {
+    color: #CBD5E1;
+    margin: 18px 0 25px;
+    font-size: 17px;
+    line-height: 1.7;
+}
+
+/* Founder image */
+
+.founder-image {
+    width: 100%;
+    max-width: 380px;
+    height: 430px;
+
+    margin-left: auto;
+
+    border: 4px solid #111111;
+    border-radius: 30px;
+
+    background: #FFD51F;
+
+    overflow: hidden;
+
+    box-shadow: 10px 10px 0 #111111;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.founder-image img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+    object-position: center;
+
+    display: block;
+}
+.founder-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: center;
+    padding: 10px;
+}
+.my-quote {
+  margin: 25px auto 0;
+  max-width: 320px;
+  font-size: 16px;
+  line-height: 1.6;
+  font-style: italic;
+  color: #ffffff;
+  font-weight: 500;
+}
+
+.about-me{
+    display:flex;
+    align-items:center;
+    gap:60px;
+    background:#fff;
+    padding:50px;
+    border-radius:25px;
+    box-shadow:0 15px 40px rgba(0,0,0,0.08);
+}
+
+.about-photo{
+    flex:0 0 300px;
+}
+
+.about-photo img{
+    width:100%;
+    border-radius:20px;
+    object-fit:cover;
+    box-shadow:0 10px 30px rgba(0,0,0,0.15);
+}
+
+.about-details{
+    flex:1;
+}
+
+.about-details h2{
+    font-size:2.2rem;
+    margin-bottom:10px;
+}
+
+.my-quote{
+    font-style:italic;
+    color:#ffb400;
+    margin-bottom:25px;
+}
+
+.about-info{
+    display:flex;
+    flex-direction:column;
+    gap:15px;
+}
+
+.info-row{
+    display:flex;
+    justify-content:space-between;
+    padding:15px 20px;
+    background:#f8f8f8;
+    border-radius:12px;
+}
+
+.info-row span{
+    color:#666;
+    font-weight:600;
+}
+
+.info-row strong{
+    color:#222;
+}
+
+@media(max-width:768px){
+
+.about-me{
+    flex-direction:column;
+    text-align:center;
+}
+
+.info-row{
+    flex-direction:column;
+    gap:5px;
+}
+
+}
+
+/* =========================================
+   MAMEE — TRANSPARENT YELLOW REFERENCE
+========================================= */
+
+.evidence {
+    position: relative;
+
+    width: 100%;
+    box-sizing: border-box;
+
+    margin-top: 30px;
+    padding: 20px 22px;
+
+    background: rgba(255, 255, 255, 0.82);
+
+    border: 2px solid #111;
+    border-radius: 18px;
+
+    box-shadow: 7px 7px 0 #111;
+
+    overflow: hidden;
+
+    transition:
+        background 0.45s ease,
+        transform 0.35s cubic-bezier(.2,.8,.2,1),
+        box-shadow 0.35s ease;
+}
+
+
+/* Yellow glow layer */
+.evidence::before {
+    content: "";
+
+    position: absolute;
+    inset: 0;
+
+    background: rgba(247, 247, 0, 0.45);
+
+    opacity: 0;
+
+    transform: scale(0.8);
+
+    transition:
+        opacity 0.45s ease,
+        transform 0.45s cubic-bezier(.2,.8,.2,1);
+
+    pointer-events: none;
+}
+
+
+/* Hover entire box */
+.evidence:hover {
+    background: rgba(247, 247, 0, 0.18);
+
+    transform: translate(-4px, -4px);
+
+    box-shadow:
+        11px 11px 0 #111,
+        0 15px 35px rgba(0, 0, 0, 0.12);
+}
+
+.evidence:hover::before {
+    opacity: 1;
+    transform: scale(1);
+}
+
+
+/* Keep content above yellow layer */
+.evidence strong,
+.evidence .source-link {
+    position: relative;
+    z-index: 2;
+}
+
+
+/* =========================================
+   LABEL
+========================================= */
+
+.evidence strong {
+    display: block;
+
+    margin-bottom: 12px;
+
+    font-size: 10px;
+    font-weight: 800;
+
+    letter-spacing: 2.5px;
+
+    color: #ff6f78;
+}
+
+
+/* =========================================
+   REFERENCE LINK
+========================================= */
+
+.source-link {
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    width: 100%;
+    box-sizing: border-box;
+
+    padding: 14px 0;
+
+    border-top: 1px solid rgba(0,0,0,0.18);
+
+    color: #111;
+
+    text-decoration: none;
+
+    font-size: 15px;
+    font-weight: 500;
+
+    transition:
+        padding 0.3s ease,
+        color 0.3s ease;
+}
+
+
+/* Arrow */
+
+.source-link::after {
+    content: "↗";
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    flex-shrink: 0;
+
+    width: 36px;
+    height: 36px;
+
+    margin-left: 18px;
+
+    border: 1.5px solid #111;
+
+    border-radius: 50%;
+
+    background: transparent;
+
+    font-size: 18px;
+
+    transition:
+        transform 0.35s ease,
+        background 0.35s ease,
+        color 0.35s ease;
+}
+
+
+/* Link hover */
+
+.source-link:hover {
+    padding-left: 8px;
+}
+
+.source-link:hover::after {
+    transform: translate(5px, -5px) rotate(8deg);
+
+    background: #111;
+
+    color: #fff;
+}
+
+
+/* Press */
+
+.source-link:active {
+    transform: scale(0.97);
+}
+
+/* =====================================================
+   MAMEE — ANIMATED EVIDENCE BOX
+===================================================== */
+
+.evidence {
+  position: relative;
+
+  width: 100%;
+  box-sizing: border-box;
+
+  margin-top: 28px;
+  padding: 20px 22px;
+
+  /* NORMAL STATE */
+  background: #ffffff;
+
+  border: 2px solid #111111;
+  border-radius: 18px;
+
+  box-shadow: 7px 7px 0 #111111;
+
+  overflow: hidden;
+
+  isolation: isolate;
+
+  transition:
+    background 0.45s ease,
+    transform 0.35s cubic-bezier(.2,.8,.2,1),
+    box-shadow 0.35s ease,
+    border-color 0.35s ease;
+}
+
+
+/* =====================================================
+   COLOUR ANIMATION LAYER
+===================================================== */
+
+.evidence::before {
+
+  content: "";
+
+  position: absolute;
+
+  inset: 0;
+
+  background:
+    linear-gradient(
+      120deg,
+      rgba(255,247,0,.55),
+      rgba(255,111,120,.30),
+      rgba(0,220,220,.30),
+      rgba(255,247,0,.55)
+    );
+
+  background-size: 300% 300%;
+
+  opacity: 0;
+
+  transition: opacity .4s ease;
+
+  animation: evidenceColour 4s ease infinite;
+
+  pointer-events: none;
+
+  z-index: 0;
+}
+
+
+@keyframes evidenceColour {
+
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
+
+}
+
+
+/* =====================================================
+   HOVER — WHOLE BOX CHANGES
+===================================================== */
+
+.evidence:hover {
+
+  background: rgba(255,255,255,.45);
+
+  transform: translateY(-5px);
+
+  border-color: #111111;
+
+  box-shadow:
+    10px 10px 0 #111111,
+    0 18px 35px rgba(0,0,0,.10);
+}
+
+
+.evidence:hover::before {
+
+  opacity: 1;
+}
+
+
+/* =====================================================
+   CONTENT ABOVE ANIMATION
+===================================================== */
+
+.evidence strong,
+.evidence .source-link {
+
+  position: relative;
+
+  z-index: 3;
+}
+
+
+/* =====================================================
+   REFERENCE LABEL
+===================================================== */
+
+.evidence strong {
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 8px;
+
+  margin-bottom: 12px;
+
+  font-size: 10px;
+
+  font-weight: 800;
+
+  letter-spacing: 2.5px;
+
+  color: var(--red);
+}
+
+
+/* Small animated dot */
+
+.evidence strong::before {
+
+  content: "";
+
+  width: 7px;
+  height: 7px;
+
+  border-radius: 50%;
+
+  background: var(--red);
+
+  animation: evidenceDot 1.5s infinite;
+}
+
+
+@keyframes evidenceDot {
+
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+
+  50% {
+    transform: scale(1.5);
+    opacity: .45;
+  }
+
+}
+
+
+/* =====================================================
+   REFERENCE LINK
+===================================================== */
+
+.evidence .source-link {
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  width: 100%;
+
+  box-sizing: border-box;
+
+  padding: 14px 0;
+
+  border-top: 1px solid rgba(0,0,0,.16);
+
+  color: #111111;
+
+  text-decoration: none;
+
+  font-size: 14px;
+
+  font-weight: 600;
+
+  transition:
+    padding .3s ease,
+    color .3s ease;
+}
+
+
+/* =====================================================
+   ARROW
+===================================================== */
+
+.evidence .source-link::after {
+
+  content: "↗";
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  flex-shrink: 0;
+
+  width: 36px;
+  height: 36px;
+
+  margin-left: 18px;
+
+  border: 1.5px solid #111111;
+
+  border-radius: 50%;
+
+  background: rgba(255,255,255,.5);
+
+  color: #111111;
+
+  font-size: 18px;
+
+  transition:
+    transform .4s cubic-bezier(.2,.8,.2,1),
+    background .3s ease,
+    color .3s ease;
+}
+
+
+/* =====================================================
+   LINK HOVER
+===================================================== */
+
+.evidence .source-link:hover {
+
+  padding-left: 8px;
+
+  color: #111111;
+}
+
+
+.evidence .source-link:hover::after {
+
+  transform:
+    translate(5px,-5px)
+    rotate(10deg)
+    scale(1.08);
+
+  background: #111111;
+
+  color: #ffffff;
+}
+
+
+/* =====================================================
+   SHINE EFFECT
+===================================================== */
+
+.evidence .source-link::before {
+
+  content: "";
+
+  position: absolute;
+
+  top: 0;
+
+  left: -120%;
+
+  width: 60%;
+
+  height: 100%;
+
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      rgba(255,255,255,.65),
+      transparent
+    );
+
+  transform: skewX(-20deg);
+
+  pointer-events: none;
+}
+
+
+.evidence .source-link:hover::before {
+
+  animation: evidenceShine .7s ease forwards;
+}
+
+
+@keyframes evidenceShine {
+
+  from {
+    left: -120%;
+  }
+
+  to {
+    left: 140%;
+  }
+
+}
+
+
+/* =====================================================
+   PRESS / CLICK
+===================================================== */
+
+.evidence:has(.source-link:active) {
+
+  transform:
+    translateY(1px)
+    scale(.985);
+
+  box-shadow:
+    3px 3px 0 #111111;
+}
+
+
+.evidence .source-link:active::after {
+
+  transform: scale(.85);
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 768px) {
+
+  .evidence {
+
+    padding: 18px;
+
+    border-radius: 15px;
+
+    box-shadow:
+      5px 5px 0 #111111;
+  }
+
+  .evidence .source-link {
+
+    font-size: 13px;
+  }
+
+}
+/* =========================================
+   EXISTING PAGE LINK BOX
+   COLOUR CHANGE WHEN PRESSED
+========================================= */
+
+.page-link-card {
+  position: relative;
+  overflow: hidden;
+
+  transition:
+    background 0.25s ease,
+    transform 0.15s ease,
+    box-shadow 0.15s ease;
+}
+
+
+/* -----------------------------------------
+   YELLOW COLOUR WHEN PRESSING
+----------------------------------------- */
+
+.page-link-card:active {
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(255, 247, 0, 0.95),
+      rgba(255, 220, 0, 0.85),
+      rgba(255, 111, 120, 0.65)
+    ) !important;
+
+  transform:
+    translateY(3px)
+    scale(0.98);
+
+  box-shadow:
+    3px 3px 0 #111111 !important;
+
+  border-color: #111111;
+}
+
+
+/* -----------------------------------------
+   ANIMATED COLOUR LAYER
+----------------------------------------- */
+
+.page-link-card:active::before {
+
+  content: "";
+
+  position: absolute;
+
+  inset: 0;
+
+  background:
+    linear-gradient(
+      120deg,
+      #fff700,
+      #ff6f78,
+      #00dddd,
+      #fff700
+    );
+
+  background-size: 300% 300%;
+
+  animation:
+    pressedColour 1s ease infinite;
+
+  opacity: 0.75;
+
+  z-index: 0;
+
+  pointer-events: none;
+}
+
+
+@keyframes pressedColour {
+
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
+
+}
+
+
+/* Keep existing content visible */
+
+.page-link-card > * {
+  position: relative;
+  z-index: 2;
+}
+
+
+/* -----------------------------------------
+   ARROW PRESS
+----------------------------------------- */
+
+.page-link-card:active .page-link-arrow {
+
+  background: #111111;
+
+  color: #ffffff;
+
+  transform: scale(0.85) rotate(-5deg);
+
+}
+
+/* =====================================================
+   MAMEE REFERENCES — FULL BOX ANIMATION
+   Works with your existing HTML
+===================================================== */
+
+/* Reference box */
+.reference {
+  position: relative;
+  overflow: hidden;
+
+  transition:
+    background 0.35s ease,
+    transform 0.2s ease,
+    box-shadow 0.25s ease,
+    border-color 0.25s ease;
+
+  cursor: pointer;
+}
+
+
+/* =====================================================
+   ANIMATED COLOUR LAYER
+===================================================== */
+
+.reference::before {
+  content: "";
+
+  position: absolute;
+  inset: 0;
+
+  background:
+    linear-gradient(
+      120deg,
+      rgba(255, 247, 0, 0.70),
+      rgba(255, 111, 120, 0.45),
+      rgba(0, 220, 220, 0.40),
+      rgba(255, 247, 0, 0.70)
+    );
+
+  background-size: 300% 300%;
+
+  opacity: 0;
+
+  transition:
+    opacity 0.35s ease;
+
+  pointer-events: none;
+
+  z-index: 0;
+}
+
+
+/* =====================================================
+   SHINE
+===================================================== */
+
+.reference::after {
+  content: "";
+
+  position: absolute;
+
+  top: -50%;
+  left: -100%;
+
+  width: 45%;
+  height: 200%;
+
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      rgba(255,255,255,0.8),
+      transparent
+    );
+
+  transform: rotate(20deg);
+
+  opacity: 0;
+
+  pointer-events: none;
+
+  z-index: 1;
+}
+
+
+/* =====================================================
+   HOVER — WHOLE BOX
+===================================================== */
+
+.reference:hover {
+
+  background: rgba(255,255,255,0.35);
+
+  transform: translateY(-5px);
+
+  box-shadow:
+    9px 9px 0 #111111,
+    0 18px 35px rgba(0,0,0,0.10);
+
+}
+
+
+/* Colour starts moving */
+
+.reference:hover::before {
+
+  opacity: 1;
+
+  animation:
+    referenceColour 3s ease infinite;
+}
+
+
+/* Shine moves across */
+
+.reference:hover::after {
+
+  opacity: 1;
+
+  animation:
+    referenceShine 0.8s ease forwards;
+}
+
+
+@keyframes referenceColour {
+
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
+
+}
+
+
+@keyframes referenceShine {
+
+  0% {
+    left: -100%;
+  }
+
+  100% {
+    left: 150%;
+  }
+
+}
+
+
+/* =====================================================
+   KEEP YOUR CONTENT ABOVE ANIMATION
+===================================================== */
+
+.reference > * {
+  position: relative;
+  z-index: 2;
+}
+
+
+/* =====================================================
+   REFERENCE TITLE
+===================================================== */
+
+.reference strong {
+
+  display: block;
+
+  transition:
+    transform 0.3s ease,
+    color 0.3s ease;
+}
+
+
+.reference:hover strong {
+
+  transform: translateX(5px);
+
+}
+
+
+/* =====================================================
+   DESCRIPTION
+===================================================== */
+
+.reference span {
+
+  display: inline-block;
+
+  transition:
+    transform 0.3s ease;
+}
+
+
+.reference:hover span {
+
+  transform: translateX(5px);
+
+}
+
+
+/* =====================================================
+   OPEN SOURCE LINK
+===================================================== */
+
+.reference .source-link {
+
+  display: inline-flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 8px;
+
+  position: relative;
+
+  z-index: 5;
+
+  margin-top: 14px;
+
+  padding: 10px 15px;
+
+  border: 2px solid #111111;
+
+  border-radius: 10px;
+
+  background: rgba(255,255,255,0.75);
+
+  color: #111111;
+
+  text-decoration: none;
+
+  font-weight: 700;
+
+  transition:
+    background 0.25s ease,
+    color 0.25s ease,
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+
+/* Link hover */
+
+.reference .source-link:hover {
+
+  background: #111111;
+
+  color: #ffffff;
+
+  transform:
+    translateY(-3px);
+
+  box-shadow:
+    4px 4px 0 #ff6f78;
+}
+
+
+/* =====================================================
+   PRESS THE LINK
+   → WHOLE BOX PRESSES
+===================================================== */
+
+.reference:has(.source-link:active) {
+
+  transform:
+    translateY(2px)
+    scale(0.985);
+
+  box-shadow:
+    3px 3px 0 #111111;
+
+}
+
+
+/* Make colour stronger while pressing */
+
+.reference:has(.source-link:active)::before {
+
+  opacity: 1;
+
+  animation:
+    referenceColour 0.8s linear infinite;
+
+}
+
+
+/* Button press */
+
+.reference .source-link:active {
+
+  transform:
+    scale(0.94);
+
+  box-shadow: none;
+
+}
+
+
+/* =====================================================
+   ARROW
+===================================================== */
+
+.reference .source-link {
+
+  transition:
+    background 0.25s ease,
+    color 0.25s ease,
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+
+/* =====================================================
+   FOCUS ACCESSIBILITY
+===================================================== */
+
+.reference .source-link:focus-visible {
+
+  outline:
+    3px solid #ff6f78;
+
+  outline-offset: 4px;
+
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 768px) {
+
+  .reference {
+
+    transition:
+      background 0.3s ease,
+      transform 0.2s ease,
+      box-shadow 0.25s ease;
+  }
+
+  .reference .source-link {
+
+    padding: 9px 13px;
+
+    font-size: 13px;
+
+  }
+
+}
+
+.card > img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    display: block;
+    border-radius: 18px 18px 0 0;
+}
+
+.hero {
+  width: 100%;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+.hero-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
